@@ -1,0 +1,400 @@
+$width-card: 340px;
+$height-card: 0.64 * $width-card;
+
+.div-card {
+    perspective: 500px;
+    position: relative;
+}
+
+.card {
+    width: 340px;
+    height: 214.2px;
+    border-radius: 12px;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    background-color: transparent;
+    z-index: -1;
+    box-shadow: 0px 4px 80px rgba(130, 38, 158, 0.07), 
+    0px 1.20588px 24.1177px rgba(130, 38, 158, 0.0456112), 
+    0px 0.50086px 10.0172px rgba(130, 38, 158, 0.035), 
+    0px 0.18115px 3.62304px rgba(130, 38, 158, 0.0243888);
+    animation: flip-card 12s linear infinite alternate, 
+    change-bg-card 12s linear 0s infinite alternate;
+}
+
+@keyframes flip-card {
+    0% {
+        -webkit-transform: rotateX(-10deg) rotateY(10deg) rotate(-15deg);
+        transform: rotateX(-10deg) rotateY(10deg) rotate(-15deg);
+    }
+    40% {
+        -webkit-transform: rotateX(0deg) rotateY(20deg);
+        transform: rotateX(0deg) rotateY(20deg);
+    }
+    60% {
+        -webkit-transform: rotateX(180deg) rotateY(20deg);
+        transform: rotateX(180deg) rotateY(20deg);
+    }
+    100% {
+        -webkit-transform: rotateX(190deg) rotateY(10deg) rotate(15deg);
+        transform: rotateX(190deg) rotateY(10deg) rotate(15deg);
+    }
+}
+
+
+@keyframes change-bg-card {
+    0%, 49% {
+        background-image: url('../svg/nucard.svg');
+        background-size: cover; // ele ajustar ao tamanho da div que foi estabelecida.
+    } 
+    50%, 100% {
+        background-image: url('../svg/nucard-2.svg');
+        background-size: cover;
+    }
+}
+
+.icon-card-hero {
+    position: absolute;
+    top: -20px;
+    left: -30px;
+    z-index: 200;
+    animation: icons-hero 4s ease 0.3s infinite alternate;
+}
+
+.icon-contactless-hero {
+    position: absolute;
+    top: 350px;
+    left: 30px;
+    z-index: 200;
+        
+    @include responsive(s) {
+        top: 320px;
+        left: 120px;
+    }
+    animation: icons-hero 4s ease 1.3s infinite alternate;
+}
+
+.icon-mobile-hero {
+    position: absolute;
+    top: 150px;
+    left: -250px;
+    z-index: 200;
+    
+    @include responsive(s) {
+        top: 350px;
+        left: -100px;
+    }
+
+    animation: icons-hero 4s ease 2.5s infinite alternate;
+}
+
+@keyframes icons-hero {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+            transform: translate3d(10px, -40px, 0);
+    }
+}
+
+.bg-home-blur1 {
+    transform: translate3d(0, -100px, 0);
+}
+
+.bg-home-blur1 {
+    transform: translate3d(0, -150px, 0);
+}
+
+.bg-home-rect1 {
+    animation: bg-home-rect 3s ease 0s infinite alternate;
+}
+
+.bg-home-rect2 {
+    animation: bg-home-rect 3s ease .5s infinite alternate;
+}
+
+.bg-home-rect3 {
+    animation: bg-home-rect 3s ease 1s infinite alternate;
+}
+
+.bg-home-rect4 {
+    animation: bg-home-rect 3s ease 1.5s infinite alternate;
+}
+
+@keyframes bg-home-rect {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 30px, 0);
+    }
+}
+
+.people1 {
+    opacity: 0;
+    animation: people 10s ease 0s infinite;
+}
+
+.people2 {
+    opacity: 0;
+    animation: people 10s ease 5s infinite;
+}
+
+.people3 {
+    opacity: 0;
+    animation: people 10s ease 2s infinite;
+}
+
+.people4 {
+    opacity: 0;
+    animation: people 10s ease 7s infinite;
+}
+
+.people5 {
+    opacity: 0;
+    animation: people 10s ease 3s infinite;
+}
+
+.people6 {
+    opacity: 0;
+    animation: people 10s ease 8s infinite;
+}
+
+#people2 {
+    @include responsive(s) {
+        display: none;
+    }
+}
+
+@keyframes people {
+    0% {
+        opacity: 0;
+    }
+    20%,50% {
+        opacity: 1;
+    }
+    70%, 100% {
+        opacity: 0;
+    }
+}
+
+.fignu2-screen1 {
+    animation: fignu2-screen1 18s ease infinite alternate;
+}
+
+@keyframes fignu2-screen1 {
+    0%,15% {
+        opacity: 1;
+    }
+    20%,100% {
+        opacity: 0;
+    }
+}
+
+.fignu2-screen2 {
+    animation: fignu2-screen2 18s ease infinite alternate;
+}
+
+@keyframes fignu2-screen2 {
+    0%,15% {
+        opacity: 0;
+    }
+    20%, 35% {
+        opacity: 1;
+    }
+    40%,100% {
+        opacity: 0;
+    }
+}
+
+.fignu2-screen3 {
+    animation: fignu2-screen3 18s ease infinite alternate;
+}
+
+@keyframes fignu2-screen3 {
+    0%,35% {
+        opacity: 0;
+    }
+    40%, 55% {
+        opacity: 1;
+    }
+    60%,100% {
+        opacity: 0;
+    }
+}
+
+.fignu2-screen4 {
+    animation: fignu2-screen4 18s ease infinite alternate;
+}
+
+@keyframes fignu2-screen4 {
+    0%,55% {
+        opacity: 0;
+    }
+    60%, 75% {
+        opacity: 1;
+    }
+    80%,100% {
+        opacity: 0;
+    }
+}
+
+.fignu2-screen5 {
+    animation: fignu2-screen5 18s ease infinite alternate;
+}
+
+@keyframes fignu2-screen5 {
+    0%,75% {
+        opacity: 0;
+    }
+    80%,100% {
+        opacity: 1;
+    }
+}
+
+.fignu2-icon1 {
+    animation: fignu2-icon-move 3s ease .6s infinite alternate;
+}
+
+.fignu2-icon3 {
+    animation: fignu2-icon-move 3s ease 1.7s infinite alternate;
+}
+
+.fignu2-icon5 {
+    animation: fignu2-icon-move 3s ease .3s infinite alternate;
+}
+
+@keyframes fignu2-icon-move {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(10px, -40px, 0);
+    }
+}
+
+.fignu3-card-verse {
+    transform-origin: center center;
+    transform-box: fill-box;
+    transform: translate3d(0, -40px, 0);
+    animation: fignu3-card-verse-move 3s ease 0s infinite alternate;
+}
+
+@keyframes fignu3-card-verse-move {
+    0% {
+        transform: translate3d(0, -40px, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate3d(0, 20px, 0) rotate(5deg);
+    }
+} 
+
+.fignu3-card-front {
+    transform-origin: center center;
+    transform-box: fill-box;
+    transform: translate3d(0, -40px, 0);
+    animation: fignu3-card-front-move 3s ease 1s infinite alternate;
+}
+
+@keyframes fignu3-card-front-move {
+    0% {
+        transform: translate3d(0, -40px, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate3d(0, 20px, 0) rotate(-5deg);
+    }
+}
+
+.fignu3-shadow {
+    transform-origin: center center;
+    transform-box: fill-box;
+    fill-opacity: 0.15;
+    animation: fignu3-shadow 3s ease 1s infinite alternate;
+}
+
+@keyframes fignu3-shadow {
+    0% {
+        fill-opacity: 0.15;
+    }
+    100% {
+        fill-opacity: 0.4;
+    }
+}
+
+.fignu4-letter-u, .fignu4-letter-n {
+    animation: fignu4-letter 4s ease infinite alternate;
+    stroke-width: 4;
+    stroke-dasharray: 0 400;
+    stroke-opacity: 0;
+}
+
+@keyframes fignu4-letter {
+    0% {
+        stroke-width: 4;
+        stroke-dasharray: 0 400;
+        stroke-opacity: 1;
+    }
+    60%, 100% {
+        stroke-width: 4;
+        stroke-dasharray: 400 0;
+        stroke-opacity: 1;
+    }
+}
+
+.logonu-letter-n {
+    transform-origin: center center;
+    transform-box: fill-box;
+    animation: logo-nu-n 7s ease infinite alternate;
+}
+
+@keyframes logo-nu-n{ 
+    0% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        stroke-dasharray: 1 100;
+        stroke-width: 0;
+    }
+    20%, 50% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        stroke-dasharray: 100 0;
+        stroke-width: 1.5;
+    }
+    60%, 100% {
+        opacity: 1;
+        -webkit-transform: translate3d(40px, 10px, 0) rotate(180deg);
+        transform: translate3d(40px, 10px, 0) rotate(180deg);
+    }
+}
+
+.logonu-letter-u {
+    transform-origin: center center;
+    transform-box: fill-box;
+    animation: logo-nu-u 7s ease infinite alternate;
+}
+
+@keyframes logo-nu-u {
+    0% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        stroke-dasharray: 1 100;
+        stroke-width: 0;
+    }
+    20%, 50% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        stroke-dasharray: 100 0;
+        stroke-width: 1.5;
+    }
+    60%, 100% {
+        opacity: 1;
+        -webkit-transform: translate3d(-40px, -10px, 0) rotate(180deg);
+        transform: translate3d(-40px, -10px, 0) rotate(180deg);
+    }
+}

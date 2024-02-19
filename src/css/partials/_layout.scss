@@ -1,0 +1,217 @@
+// Container Devices
+
+$container-xl: 1440px; // Extra-large
+$container-l: 1140px; // Large
+$container-m: 960px; // Medium
+$container-s: 540px; // Small
+
+// Mixins of MediasQuery
+
+@mixin responsive($device) {
+    @if $device == xl {
+        @media screen and ( min-width: $container-xl ) { // Para resoluções 1440px
+            @content; // Conteúdo que está na hora de eu fazer a responsividade;
+        }
+    } @else if $device == l {
+        @media screen and ( max-width: $container-xl ) and ( min-width: $container-l ) { // Para resoluções entre 1140px e 1440px
+
+        }
+    }  @else if $device == m {
+        @media screen and ( max-width: $container-l ) and ( min-width: $container-m ) { // Para resoluções entre 960px e 1140px
+            @content;
+        }
+    } @else if $device == s {
+        @media screen and ( max-width: $container-m ) { // Para resoluções abaixo de 960px
+            @content;
+        }
+    } @else if $device == xs {
+        @media screen and ( max-width: $container-s ) { // Para resoluções abaixo de 540px
+            @content;
+        }
+    } 
+}
+
+.container {
+    max-width: $container-xl;
+    margin: 0 auto;
+    padding: 96px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    overflow: hidden; // Para tirar a barra de rolagem, se tiver.
+
+    @include responsive(s) {
+        flex-direction: column;
+        padding: 32px 18px;
+    }
+}
+
+.flex-spacebetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-top {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.flex-start {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-column {
+    flex-direction: column;
+}
+.relative {
+    position: relative;
+}
+.flex-wrap { // Quebrar a linha quando nao coube mais nada
+    flex-wrap: wrap;
+}
+.flex-item-1 {
+    flex: 1 1 360px;
+}
+.flex-item-2 {
+    flex: 2 1 360px;
+}
+.flex-item-3 {
+    flex: 3 1 360px;
+}
+.flex-item-4 {
+    flex: 4 1 360px;
+}
+.flex-item-5 {
+    flex: 5 1 360px;
+}
+.flex-item-auto {
+    flex: 2 1 auto;
+}
+.w-auto {
+    width: auto;
+}
+.w-100 {
+    width: 100%;
+}
+.w-75 {
+    width: 75%;
+}
+.w-50 {
+    width: 50%;
+}
+.w-25 {
+    width: 25%;
+}
+.hidden {
+    overflow: hidden;
+}
+
+.hero {
+    height: 90vh;
+
+    @include responsive(s) {
+        height: auto;
+    }
+}
+
+.bg-home {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.svg-bg-home {
+    width: 150%;
+
+    @include responsive(xl) {
+        width: 100%;
+    }
+}
+
+.list-item {
+    list-style: none;
+    position: relative;
+    padding: 8px 8px 8px 72px;
+    margin-bottom: 32px;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -8px;
+        display: block;
+        width: 56px;
+        height: 56px;
+    }
+}
+
+.best {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 50px;
+    background-color: $white-normal;
+    
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0); // Sempre ao centro do elemento.
+        width: 124px;
+        height: 32px;
+        background-image: url('../svg/entail.svg');
+        background-repeat: no-repeat;
+    }
+
+    @include responsive(s) {
+        flex-direction: column;
+    }
+}
+
+.best-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 16px;
+    margin: 8px 0px;
+
+    @include responsive(s) {
+        justify-content: center;
+        align-items: center;
+    }
+} 
+
+.list {
+    list-style: none;
+
+    li {
+        margin-bottom: 12px;
+    }
+
+    a {
+        color: $secundary-light;
+    }
+}
+
+footer {
+    background: linear-gradient(220.94deg, #A950C4 14.43%, #82269E 85.28%); 
+}
+
+.bt-purple {
+    border-top: 1px solid $secundary-light;
+}
