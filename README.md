@@ -17,6 +17,10 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - SCSS
 - JAVASCRIPT
 
+## 💻 Projeto
+
+Projeto de redesign do site da Nubank, proposto pelo Násser Yousef Ali - FRONTPUSH.
+
 ## :memo: Licença
 
 Esse projeto está sob a licença MIT.
