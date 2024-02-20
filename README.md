@@ -6,7 +6,7 @@
 <br>
 
 <p align="center">
-  <img alt="Preview do projeto" src=".github/preview.png" width="100%">
+  <img alt="Preview do projeto" src="src/img/group3.jpg" width="100%">
 </p>
 
 ## 🚀 Tecnologias
